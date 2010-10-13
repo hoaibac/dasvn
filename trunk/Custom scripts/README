@@ -8,3 +8,61 @@ info about this files can be found here: http://www.directadmin.com/search_versi
 
 Put virtual_host2.conf in /usr/local/directadmin/data/templates/custom/
 Put virtual_host2_secure.conf in /usr/local/directadmin/data/templates/custom/
+
+
+
+
+
+Existing user should run this three scripts:
+
+
+Whats needs to e done is to run the scripts that are runed when the user is created (domain_destroy_pre.sh, user_create_post.sh & recreate httpd settings)
+
+
+To recreate the httpd settings this three lines needs to be runned:
+
+echo "action=rewrite&value=httpd" >> /usr/local/directadmin/data/task.queue
+/usr/local/directadmin/dataskq d
+/etc/init.d/httpd restart
+
+
+
+
+for each user this script is needed to create the svn settings for each user:
+
+#!/bin/bash
+username=$1
+passwd=$2
+domain=$3
+mkdir /home/$username/svn_settings
+htpasswd -cmb /home/$username/svn_settings/passwd $username $passwd >& /dev/null
+chown -R $username:apache /home/$username/svn_settings/
+exit 0;
+
+
+
+and for each domain in users:
+
+#!/bin/bash
+username=$1
+domain=$2
+mkdir /home/$username/domains/$domain/svn_repositories
+mkdir /home/$username/domains/$domain/svn_settings
+echo "" > /home/$username/domains/$domain/svn_settings/authz
+echo "[aliases]" >> /home/$username/domains/$domain/svn_settings/authz
+echo "" >> /home/$username/domains/$domain/svn_settings/authz
+echo "[groups]" >> /home/$username/domains/$domain/svn_settings/authz
+echo "" >> /home/$username/domains/$domain/svn_settings/authz
+echo "[/]" >> /home/$username/domains/$domain/svn_settings/authz
+echo "$username = r" >> /home/$username/domains/$domain/svn_settings/authz
+echo "" >> /home/$username/domains/$domain/svn_settings/authz
+chown -R apache:apache /home/$username/domains/$domain/svn_repositories
+chown -R $username:apache /home/$username/domains/$domain/svn_settings
+echo "/home/$username/domains/$domain/svn_repositories is created"
+cd /home/$username/domains/$domain
+exit 0;
+
+
+
+
+this scripts should be implemented in the installation of the plugin, 
