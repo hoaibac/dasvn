@@ -2,8 +2,6 @@
 #username=$1
 #passwd=$2
 #domain=$3
-rm /home/$username/domains/$domain/svn_repositories -rf
-rm /home/$username/svn_settings -rf
 mkdir /home/$username/svn_settings
 mkdir /home/$username/domains/$domain/svn_repositories
 mkdir /home/$username/domains/$domain/svn_settings
