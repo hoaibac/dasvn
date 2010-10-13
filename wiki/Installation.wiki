@@ -17,11 +17,19 @@ SVN - http://subversion.tigris.org/ You should be able to run: "svnadmin --versi
 Installation:
 
 Put domain_create_post.sh in /usr/local/directadmin/scripts/custom/
+
 Put domain_destroy_pre.sh in /usr/local/directadmin/scripts/custom/
+
 Put user_create_post.sh in /usr/local/directadmin/scripts/custom/
 
+
 Put virtual_host2.conf in /usr/local/directadmin/data/templates/custom/
+
 Put virtual_host2_secure.conf in /usr/local/directadmin/data/templates/custom/
+
+
+
+
 
 make shure you got the folowing permissions:
 
