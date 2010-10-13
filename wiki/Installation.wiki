@@ -10,13 +10,9 @@ This is supposed to be a complete guide how to install and use the svn-plugin
 Prerequires:
 
 SVN - http://subversion.tigris.org/
-
 You should be able to run:
-
 svnadmin --version
-
 and
-
 svn --version
 
 
