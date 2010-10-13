@@ -1,8 +1,8 @@
-#summary One-sentence summary of this page.
+#summary Install instructions
 
 = Introduction =
 
-Install instructions
+This is supposed to be a complete guide how to install and use the svn-plugin
 
 
 = Details =
