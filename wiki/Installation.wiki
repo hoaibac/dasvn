@@ -24,11 +24,17 @@ Put virtual_host2.conf in /usr/local/directadmin/data/templates/custom/
 Put virtual_host2_secure.conf in /usr/local/directadmin/data/templates/custom/
 
 make shure you got the folowing permissions:
+
 -rwx------ 1 diradmin diradmin 974 2009-10-22 16:16 domain_create_post.sh
+
 -rwx------ 1 diradmin diradmin 82 2009-10-05 10:11 domain_destroy_pre.sh
+
 -rwx------ 1 diradmin diradmin 1324 2009-10-05 09:35 user_create_post.sh
+
 -rw-r--r-- 1 diradmin diradmin 1636 2009-10-05 09:17 virtual_host2.conf
+
 -rw-r--r-- 1 diradmin diradmin 1592 2009-10-22 17:09 virtual_host2_secure.conf
+
 
 
 
