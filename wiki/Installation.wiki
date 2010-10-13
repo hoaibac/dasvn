@@ -11,9 +11,9 @@ Prerequires:
 
 SVN - http://subversion.tigris.org/
 You should be able to run:
-svnadmin --version
+"svnadmin --version"
 and
-svn --version
+"svn --version"
 
 
 
