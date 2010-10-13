@@ -1,0 +1,27 @@
+#summary Install instructions
+
+= Introduction =
+
+This is supposed to be a complete guide how to install and use the svn-plugin
+
+
+= Details =
+
+Prerequires:
+
+SVN - http://subversion.tigris.org/
+
+
+Installation:
+
+Put domain_create_post.sh in /usr/local/directadmin/scripts/custom/
+Put domain_destroy_pre.sh in /usr/local/directadmin/scripts/custom/
+Put user_create_post.sh in /usr/local/directadmin/scripts/custom/
+
+Put virtual_host2.conf in /usr/local/directadmin/data/templates/custom/
+Put virtual_host2_secure.conf in /usr/local/directadmin/data/templates/custom/
+
+Upload svn.tar.gz in directadmin-panel
+
+Summary:
+Next time you create a use tou will be ablu to surf to http://sample.com/svn/ and access your SVN with settings made in directadmin panel
