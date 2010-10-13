@@ -31,7 +31,6 @@ for each user this script is needed to create the svn settings for each user:
 #!/bin/bash
 username=$1
 passwd=$2
-domain=$3
 mkdir /home/$username/svn_settings
 htpasswd -cmb /home/$username/svn_settings/passwd $username $passwd >& /dev/null
 chown -R $username:apache /home/$username/svn_settings/
