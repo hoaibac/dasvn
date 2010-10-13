@@ -45,6 +45,17 @@ make shure you got the folowing permissions:
 
 
 
+this lines are required in httpd.conf, dont remember how i got the .so files or how i compiled them
+
+LoadModule dav_svn_module  /usr/lib/apache2/modules/mod_dav_svn.so
+
+LoadModule authz_svn_module /usr/lib/apache2/modules/mod_authz_svn.so
+
+get the .so files by installing:
+
+apt-get install subversion libapache2-svn 
+
+
 
 Upload svn.tar.gz in directadmin-panel
 
