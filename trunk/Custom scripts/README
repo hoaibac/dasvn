@@ -1,3 +1,10 @@
-Put this files in /usr/local/directadmin/scripts/custom/
+
+Put domain_create_post.sh in /usr/local/directadmin/scripts/custom/
+Put domain_destroy_pre.sh in /usr/local/directadmin/scripts/custom/
+Put user_create_post.sh in /usr/local/directadmin/scripts/custom/
 
 info about this files can be found here: http://www.directadmin.com/search_versions.php?query=%2Fusr%2Flocal%2Fdirectadmin%2Fscripts%2Fcustom%2F
+
+
+Put virtual_host2.conf in /usr/local/directadmin/data/templates/custom/
+Put virtual_host2_secure.conf in /usr/local/directadmin/data/templates/custom/
