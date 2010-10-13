@@ -1,0 +1,57 @@
+#!/usr/local/bin/php
+<?php 
+ini_set('display_errors', true);
+chdir(getenv('DOCUMENT_ROOT'));
+
+$query_string = rawurldecode(getenv('QUERY_STRING'));
+if($query_string != '') {
+parse_str($query_string, $_REQUEST);
+}
+
+$post = rawurldecode(getenv('POST'));
+if($post != '') {
+	parse_str($post, $_POST);
+}
+
+if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'users') {
+	include('_templates/users.php');
+}
+else if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'adduser') {
+	include('_templates/adduser.php');
+}
+else if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'changeuser') {
+	include('_templates/changeuser.php');
+}
+else if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'repositories') {
+	include('_templates/repositories.php');
+}
+else if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'addrepository') {
+	include('_templates/addrepository.php');
+}
+else if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'changepermissions') {
+	include('_templates/changepermissions.php');
+}
+else if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'changelistpermissions') {
+	include('_templates/changelistpermissions.php');
+}
+else {
+	include('_templates/default.php');
+}
+
+/*
+
+<br /><br />
+This script is being run as <br>
+<textarea rows=30 cols=85><? phpinfo(INFO_ENVIRONMENT); ?></textarea>
+
+<br /><br />
+
+print_r($_SERVER);
+
+print_r($_REQUEST);
+
+print_r($_POST);
+
+print_r($_GET);
+*/
+?>
