@@ -56,8 +56,9 @@ get the .so files by installing:
 apt-get install subversion libapache2-svn 
 
 
-
 Upload svn.tar.gz in directadmin-panel
 
+fix user created before dasvn was installed by running fixcurentusers.sh
+
 Summary:
-Next time you create a use tou will be able to surf to http://sample.com/svn/ and access your SVN with settings made in directadmin panel
+Next time you create a user you will be able to surf to http://sample.com/svn/ and access your SVN with settings made in directadmin panel
