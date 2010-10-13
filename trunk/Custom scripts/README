@@ -13,10 +13,8 @@ Put virtual_host2_secure.conf in /usr/local/directadmin/data/templates/custom/
 
 
 
-Existing user should run this three scripts:
 
-
-Whats needs to e done is to run the scripts that are runed when the user is created (domain_destroy_pre.sh, user_create_post.sh & recreate httpd settings)
+Whats needs to e done for existing users is to run the scripts that are runed when the user is created (domain_destroy_pre.sh, user_create_post.sh & recreate httpd settings)
 
 
 To recreate the httpd settings this three lines needs to be runned:
