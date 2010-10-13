@@ -12,9 +12,14 @@ Prerequires:
 SVN - http://subversion.tigris.org/
 
 You should be able to run:
+
 svnadmin --version
+
 and
+
 svn --version
+
+
 
 
 Installation:
