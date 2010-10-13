@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for username in `ls /usr/local/directadmin/data/users`; do
-	passwd=</dev/urandom tr -dc A-Za-z0-9 | head -c 8;
+	passwd=`</dev/urandom tr -dc A-Za-z0-9 | head -c 8`;
 	echo "User: $username $passwd";
 
 	mkdir /home/$username/svn_settings
