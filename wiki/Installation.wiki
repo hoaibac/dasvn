@@ -13,7 +13,7 @@ This installation guide is tested with centos
 
 SVN - http://subversion.tigris.org/ You should be able to run: "svnadmin --version" and "svn --version" in terminal
 
-Run:
+Install svn:\n
 #apt-get install subversion libapache2-svn 
 
 
