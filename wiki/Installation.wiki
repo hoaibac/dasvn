@@ -1,40 +1,83 @@
-#summary Install instructions
-
-= Introduction =
-
-This is supposed to be a complete guide how to install and use the svn-plugin
-
-
 = Details =
 
 This installation guide is tested with centos
 
-= Prerequires =
+= 1. Compile Apache for subversion =
 
-SVN - http://subversion.tigris.org/ You should be able to run: "svnadmin --version" and "svn --version" in terminal
+Install expat-devel
+
+#yum install expat-devel
+
+Recompile apache with the original configure script, all required modules are already activated
+
+#/usr/local/directadmin/custombuild/build apache y
+
+= 2. Install subversion =
+
+Download and extract the required files
+
+#cd /etc
+
+#mkdir svn
+
+#cd svn
+
+#wget https://dasvn.googlecode.com/svn/trunk/Files/subversion-1.6.5.tar.gz
+
+#tar xzf subversion-1.6.5.tar.gz
+
+#mv subversion-1.6.5/* .
+
+#rm -r subversion-1.6.5
+
+#mkdir sqlite-amalgamation
+
+#cd sqlite-amalgamation
+
+#wget http://dasvn.googlecode.com/svn/trunk/Files/sqlite-amalgamation-3.6.13.tar.gz
+
+#tar xzf sqlite-amalgamation-3.6.13.tar.gz
+
+#mv sqlite-3.6.13/sqlite3.c .
 
 
-Install svn:
+Compile subversion
 
-#apt-get install subversion libapache2-svn 
+#./configure --prefix=/usr --with-apxs=/usr/sbin/apxs --with-apr=/usr/bin/apr-config
 
+#make
 
+#make install
 
-Installation:
+#svn help
 
-Put domain_create_post.sh in /usr/local/directadmin/scripts/custom/
-
-Put domain_destroy_pre.sh in /usr/local/directadmin/scripts/custom/
-
-Put user_create_post.sh in /usr/local/directadmin/scripts/custom/
+#/sbin/ldconfig
 
 
-Put virtual_host2.conf in /usr/local/directadmin/data/templates/custom/
+= 3. Configure Apache for subversion =
 
-Put virtual_host2_secure.conf in /usr/local/directadmin/data/templates/custom/
+Open /etc/httpd/conf/httpd.conf and make shure this lines exists: 
+
+LoadModule dav_svn_module /usr/lib/apache/mod_dav_svn.so 
+
+LoadModule authz_svn_module /usr/lib/apache/mod_authz_svn.so
 
 
+= 4. Setup scripts =
 
+#cd /usr/local/directadmin/scripts/custom/
+
+#wget "https://dasvn.googlecode.com/svn/trunk/Custom scripts/domain_create_post.sh"
+
+#wget "https://dasvn.googlecode.com/svn/trunk/Custom scripts/domain_destroy_pre.sh"
+
+#wget "https://dasvn.googlecode.com/svn/trunk/Custom scripts/user_create_post.sh"
+
+#cd /usr/local/directadmin/data/templates/custom/
+
+#wget "https://dasvn.googlecode.com/svn/trunk/Custom scripts/virtual_host2.conf"
+
+#wget "https://dasvn.googlecode.com/svn/trunk/Custom scripts/virtual_host2_secure.conf"
 
 
 make shure you got the folowing permissions:
@@ -50,21 +93,34 @@ make shure you got the folowing permissions:
 -rw-r--r-- 1 diradmin diradmin 1592 2009-10-22 17:09 virtual_host2_secure.conf
 
 
+remake virtual hosts for existing users:
 
-this lines are required in httpd.conf, dont remember how i got the .so files or how i compiled them
+#echo "action=rewrite&value=httpd" >> /usr/local/directadmin/data/task.queue
 
-LoadModule dav_svn_module  /usr/lib/apache2/modules/mod_dav_svn.so
+#/usr/local/directadmin/dataskq d
 
-LoadModule authz_svn_module /usr/lib/apache2/modules/mod_authz_svn.so
+#/etc/init.d/httpd restart
 
-get the .so files by installing:
+= 5. Fix alreade created users =
 
-apt-get install subversion libapache2-svn 
+#mkdir /scripts
+ 
+#cd /scripts/
+
+#wget "http://dasvn.googlecode.com/svn/trunk/Custom scripts/fixcurentusers.sh"
+
+#chmod 755 fixcurentusers.sh
+
+#./fixcurentusers.sh
 
 
-Upload svn.tar.gz in directadmin-panel
+= 6. Install the plugin =
 
-fix user created before dasvn was installed by running fixcurentusers.sh
+Login to directadmin and navigate to “Plugin manager”
 
-Summary:
-Next time you create a user you will be able to surf to http://sample.com/svn/ and access your SVN with settings made in directadmin panel
+Past the following link into the URL field and install the plugin
+
+http://dasvn.googlecode.com/svn/trunk/Releases/1.4/svn.tar.gz
+
+Login as a user and you should see SVN options.
+
