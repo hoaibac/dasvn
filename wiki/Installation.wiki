@@ -113,6 +113,8 @@ remake virtual hosts for existing users:
 
 #./fixcurentusers.sh
 
+#rm fixcurentusers.sh
+
 
 = 6. Install the plugin =
 
