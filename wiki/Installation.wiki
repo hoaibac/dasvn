@@ -10,7 +10,7 @@ Install expat-devel
 
 Recompile apache with the original configure script, all required modules are already activated
 
-#/usr/local/directadmin/custombuild/build apache y
+#/usr/local/directadmin/custombuild/build apache
 
 = 2. Install subversion =
 
@@ -125,4 +125,3 @@ Past the following link into the URL field and install the plugin
 http://dasvn.googlecode.com/svn/trunk/Releases/1.4/svn.tar.gz
 
 Login as a user and you should see SVN options.
-
