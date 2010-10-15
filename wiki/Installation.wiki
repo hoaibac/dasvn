@@ -10,7 +10,7 @@ Install expat-devel
 
 Recompile apache with the original configure script, all required modules are already activated
 
-#/usr/local/directadmin/custombuild/build apache
+#/usr/local/directadmin/custombuild/build apache y
 
 = 2. Install subversion =
 
