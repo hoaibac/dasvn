@@ -116,7 +116,7 @@ remake virtual hosts for existing users:
 
 = 6. Install the plugin =
 
-Login to directadmin and navigate to “Plugin manager”
+Login to directadmin and navigate to "Plugin manager"
 
 Past the following link into the URL field and install the plugin
 
