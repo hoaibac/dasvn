@@ -1,7 +1,4 @@
 #!/bin/bash
-#username=$1
-#passwd=$2
-#domain=$3
 mkdir /home/$username/svn_settings
 mkdir /home/$username/domains/$domain/svn_repositories
 mkdir /home/$username/domains/$domain/svn_settings

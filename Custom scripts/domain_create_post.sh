@@ -1,6 +1,4 @@
 #!/bin/bash
-#username=$1
-#domain=$2
 mkdir /home/$username/domains/$domain/svn_repositories
 mkdir /home/$username/domains/$domain/svn_settings
 echo "" > /home/$username/domains/$domain/svn_settings/authz
