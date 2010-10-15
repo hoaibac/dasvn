@@ -92,6 +92,7 @@ make shure you got the folowing permissions:
 
 -rw-r--r-- 1 diradmin diradmin 1592 2009-10-22 17:09 virtual_host2_secure.conf
 
+= 5. Fix alreade created users =
 
 remake virtual hosts for existing users:
 
@@ -101,7 +102,6 @@ remake virtual hosts for existing users:
 
 #/etc/init.d/httpd restart
 
-= 5. Fix alreade created users =
 
 #mkdir /scripts
  
