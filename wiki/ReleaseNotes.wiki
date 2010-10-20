@@ -1,13 +1,17 @@
-#summary One-sentence summary of this page.
+= Release Notes =
 
-= Introduction =
+= 1.5 =
 
-Add your content here.
+Fixed errors in fixcurentusers.sh when svn_settings and svn_repost already exists
 
+Changed plugin url for plugin location in pligin.conf
 
-= Details =
+Fixed syntax error in update.sh 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Fixed warning when using user level as admin in class.svnAdmin.php
+
+Fixed domain listning when using user level as admin in _templates/default.php
+
+= 1.4 =
+
+First official release
