@@ -18,7 +18,7 @@
 
 	while( ($curr=readdir($dir))) {
 
-		if($curr != '.' && $curr != '..') {
+		if($curr != '.' && $curr != '..' && $curr != 'sharedip' && $curr != 'suspended' && $curr != 'default') {
 			?>
 			<tr>
 				<td class="list"><?php print $curr ?></td>

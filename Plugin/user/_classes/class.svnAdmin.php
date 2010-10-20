@@ -23,7 +23,7 @@ class svnAdmin {
 		
     	$dir=opendir(getenv('HOME').'/domains');
     	while( ($curr=readdir($dir))) {
-			if($curr != '.' && $curr != '..') {
+    		if($curr != '.' && $curr != '..' && $curr != 'sharedip' && $curr != 'suspended' && $curr != 'default') {
 				$this->authz[$curr] = new mod_authz_svn(getenv('HOME') . "/domains/".$curr."/svn_settings/authz");
 			}
     	}
