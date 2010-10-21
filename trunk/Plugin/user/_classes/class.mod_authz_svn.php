@@ -59,7 +59,7 @@ class mod_authz_svn {
 	    		}
 	    		else if($mode == 'aliases') {
 	    			
-					$parts = split('=', $line, 2);
+					$parts = explode('=', $line, 2);
 					$name = trim($parts[0]);
 					$alias = trim($parts[1]);
 
@@ -68,8 +68,8 @@ class mod_authz_svn {
 	    		}
 	    		else if($mode == 'groups') {
 	    			
-					$parts = split('=', $line);
-					$userParts = split(',', trim($parts[1]));
+					$parts = explode('=', $line);
+					$userParts = explode(',', trim($parts[1]));
 		
 					$users = array();
 					foreach($userParts as $username) {
@@ -82,7 +82,7 @@ class mod_authz_svn {
 	    		}
 	    		else if($mode == 'list') {
 	    			
-					$parts = split('=', $line);
+					$parts = explode('=', $line);
 					$username = trim($parts[0]);
 					$permissions = trim($parts[1]);
 					
@@ -93,7 +93,7 @@ class mod_authz_svn {
 	    		else if($mode == 'repos') {
 	    			$last = count($this->repositories)-1;
 					
-	    			$parts = split('=', $line);
+	    			$parts = explode('=', $line);
 					$username = trim($parts[0]);
 					$permissions = trim($parts[1]);
 					
